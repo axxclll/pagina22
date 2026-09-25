@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basketbolitos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="fade-in">
+
+<!-- VIDEO DE FONDO -->
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+<!-- PARTÍCULAS -->
+<div id="particles-js"></div>
+
+<!-- CONTENIDO -->
+<div class="intro-container">
+    <h1 class="titulo-intro">Bienvenido a Basketbolitos</h1>
+    <a href="index.html" class="btn-entrar" id="enterBtn">QUIERO APRENDER</a>
+</div>
+
+<!-- SONIDO -->
+<audio id="clickSound" src="click.mp3"></audio>
+
+<!-- LIBRERÍA PARTÍCULAS -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<!-- CONFIG PARTÍCULAS -->
+<script>
+tsParticles.load("particles-js", {
+  background: { color: "transparent" },
+  particles: {
+    number: { value: 30 },
+    color: { value: "#FFFFFF" },
+    shape: { type: "circle" },
+    opacity: { value: 0.4 },
+    size: { value: 3 },
+    move: { enable: true, speed: 2 }
+  }
+});
+</script>
+
+<!-- EFECTO SONIDO + TRANSICIÓN + CONTRASEÑA -->
+<script>
+const btn = document.getElementById("enterBtn");
+const sound = document.getElementById("clickSound");
+
+btn.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    // Pedir contraseña
+    let password = prompt("Ingresa la contraseña:");
+    const correctPassword = "OSOMIELERO"; // <- Cambia aquí tu contraseña
+
+    if(password === correctPassword) {
+        // Reproducir sonido
+        sound.currentTime = 0;
+        sound.play();
+
+        // Animación de fade-out
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = "index.html"; // <- Página principal
+        }, 500);
+    } else {
+        alert("Contraseña incorrecta");
+    }
+});
+</script>
+
+<audio id="bgMusic" loop>
+    <source src="lobby.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// Revisar si ya estaba sonando
+if (!localStorage.getItem("musicPlaying")) {
+    music.volume = 0.1;
+    music.play().then(() => {
+        localStorage.setItem("musicPlaying", "true");
+    }).catch(() => {});
+}
+</script>
+
+<iframe src="music.html" style="display:none;"></iframe>
+
+</script>
+</body>
+</html>

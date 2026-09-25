@@ -1,0 +1,247 @@
+<!-- ======================= styles.css ======================= -->
+body{font-family:'Poppins',sans-serif;margin:0;background:#111;color:#fff;}
+header{background:#1f1f1f;padding:10px;}
+nav ul{display:flex;justify-content:center;list-style:none;padding:0;}
+nav ul li{margin:10px;}
+nav ul li a{color:white;text-decoration:none;transition:0.3s;}
+nav ul li a:hover{color:#00ffcc;transform:scale(1.1);}
+main{padding:20px;max-width:1000px;margin:auto;text-align:center;}
+footer{text-align:center;background:#1f1f1f;padding:10px;}
+img{width:300px;margin:10px;transition:0.3s;}
+img:hover{transform:scale(1.05);}
+@media(max-width:768px){nav ul{flex-direction:column;}}
+
+body {
+    background: #000000;
+    color: white;
+}
+
+button {
+    background: #000000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
+}
+
+#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+
+    z-index: -2;
+
+    filter: grayscale(100%) blur(4px) brightness(0.4);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+h1 {
+    color: white;
+
+    text-shadow:
+        -5px -5px 0 black,
+        5px -5px 0 black,
+        -5px 5px 0 black,
+        5px 5px 0 black,
+        0 0 10px #000000;
+}
+
+main {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+button {
+    background: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+header {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 10;
+    top: 0;
+}
+
+body {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+body {
+    font-family: 'Bangers', cursive;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+nav ul li a {
+    position: relative;
+    color: rgb(253, 253, 253);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 18px;
+    display: inline-block;
+    z-index: 1;
+}
+
+/* CUADRO AMARILLO DETRÁS */
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: #ff0000;
+
+    transform: skew(-20deg);
+    z-index: -1;
+
+    /* sombra sólida tipo Fortnite */
+    box-shadow: 4px 4px 0 black;
+}
+
+/* EFECTO HOVER PRO */
+nav ul li a:hover::before {
+    transform: skew(-20deg) scale(1.1);
+    box-shadow: 6px 6px 0 black;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+nav ul li a:active::before {
+    transform: skew(-20deg) translate(2px, 2px);
+    box-shadow: 2px 2px 0 black;
+}
+
+nav ul li a {
+    font-family: 'Bangers', cursive;
+}
+
+body {
+    font-family: 'Bangers', cursive;
+}
+
+/* CONTENEDOR CENTRADO */
+.intro-container {
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TITULO */
+.intro-container h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 60px;
+    color: white;
+
+    text-shadow:
+        -5px -5px 0 black,
+        5px -5px 0 black,
+        -5px 5px 0 black,
+        5px 5px 0 black;
+}
+
+/* BOTON FORTNITE */
+.btn-entrar {
+    margin-top: 20px;
+    font-family: 'Bangers', cursive;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    padding: 15px 30px;
+    position: relative;
+}
+
+/* FONDO DEL BOTON */
+.btn-entrar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff0000;
+    top: 0;
+    left: 0;
+    transform: skew(-20deg);
+    z-index: -1;
+    box-shadow: 6px 6px 0 black;
+}
+
+/* HOVER */
+.btn-entrar:hover::before {
+    transform: skew(-20deg) scale(1.1);
+    box-shadow: 8px 8px 0 black;
+}
+
+/* CLICK */
+.btn-entrar:active::before {
+    transform: skew(-20deg) translate(3px, 3px);
+    box-shadow: 3px 3px 0 black;
+}
+
+body {
+    font-family: 'Bangers', cursive;
+}
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.galeria img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}

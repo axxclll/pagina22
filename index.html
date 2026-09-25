@@ -1,0 +1,99 @@
+<!-- ======================= index.html ======================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basketbolitos</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="historia.html">Historia</a></li>
+<li><a href="nba.html">NBA</a></li>
+<li><a href="tips.html">Tips</a></li>
+<li><a href="galeria.html">Galería</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h1>Bienvenido a BASKETBOLITOS</h1>
+<p>Todo lo que debes saber para ser profesional en el basketball.</p>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/2hRBtl2vZDg?si=I_-YkaQtNKXdHjKp"
+title="Fortnite"
+frameborder="0"
+allowfullscreen>
+</iframe>
+<footer>
+<p>© 2026 BASKETBOLITOS</p>
+<p>Redes sociales | Aviso de privacidad</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<div id="particles-js"></div>
+
+<script>
+tsParticles.load("particles-js", {
+  background: {
+    color: "transparent"
+  },
+  particles: {
+    number: { value: 30 },
+    color: { value: "#FFFFFF" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: {
+      enable: true,
+      speed: 2
+    }
+  }
+});
+</script>
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const sound = new Audio("click.mp3");
+        sound.play();
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 150);
+    });
+});
+</script>
+
+<audio id="bgMusic" loop>
+    <source src="lobby.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// Revisar si ya estaba sonando
+if (!localStorage.getItem("musicPlaying")) {
+    music.volume = 0.3;
+    music.play().then(() => {
+        localStorage.setItem("musicPlaying", "true");
+    }).catch(() => {});
+}
+</script>
+
+<iframe src="music.html" style="display:none;"></iframe>
+
+</body>
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+</html>

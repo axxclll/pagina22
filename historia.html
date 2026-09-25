@@ -1,0 +1,97 @@
+<!-- ======================= historia.html ======================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historia</title>
+</head>
+
+<body>
+
+<header>
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="historia.html">Historia</a></li>
+<li><a href="nba.html">NBA</a></li>
+<li><a href="tips.html">Tips</a></li>
+<li><a href="galeria.html">Galería</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+
+<h1>Historia del Basketball</h1>
+
+<p>
+El basketball fue creado en 1891 por el profesor James Naismith en Estados Unidos. 
+Buscaba un deporte que se pudiera jugar bajo techo durante el invierno, por lo que 
+colocó dos canastas de duraznos y creó reglas básicas.
+</p>
+
+<p>
+Con el tiempo, el deporte creció rápidamente y se volvió popular en todo el mundo. 
+En 1946 se fundó la NBA, la liga más importante de basketball profesional. 
+Hoy en día, es uno de los deportes más vistos y practicados globalmente.
+</p>
+
+<h2>Jugadores legendarios</h2>
+
+<div class="galeria">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Michael_Jordan_in_2014.jpg" alt="Michael Jordan">
+    <img src="https://media.gettyimages.com/id/2175404257/es/foto/el-segundo-ca-lebron-james-of-the-los-angeles-lakers-poses-for-a-portrait-during-nba-media-day.jpg?s=612x612&w=gi&k=20&c=ggc5QtkwTF4X7aGi7cCLXuwiky5_VgDIJVm2vXnwBkk=" alt="LeBron James">
+    <img src="https://media.gettyimages.com/id/86146687/es/foto/los-angeles-ca-kobe-bryant-of-the-los-angeles-lakers-reacts-in-the-second-quarter-against-the.jpg?s=612x612&w=gi&k=20&c=jeloTGtAslb9M8_10dx3AFuaNd7-zsKX98uEGqZK3Og=" alt="Kobe Bryant">
+</div>
+
+</main>
+
+<footer>
+<p>© 2026 BASKETBOLITOS</p>
+</footer>
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const sound = new Audio("click.mp3");
+        sound.play();
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 150);
+    });
+});
+</script>
+
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+<audio id="bgMusic" loop>
+    <source src="lobby.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// Revisar si ya estaba sonando
+if (!localStorage.getItem("musicPlaying")) {
+    music.volume = 0.3;
+    music.play().then(() => {
+        localStorage.setItem("musicPlaying", "true");
+    }).catch(() => {});
+}
+</script>
+
+<iframe src="music.html" style="display:none;"></iframe>
+
+</body>
+</html>

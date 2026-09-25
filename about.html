@@ -1,0 +1,96 @@
+<!-- ======================= about.html ======================= -->
+<!DOCTYPE html>
+<html lang="es"><head> <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"> <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Nosotros</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><nav><ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="historia.html">Historia</a></li>
+<li><a href="nba.html">NBA</a></li>
+<li><a href="tips.html">Tips</a></li>
+<li><a href="galeria.html">Galería</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul></nav></header>
+<main class="about-section">
+  <h1>Sobre Nosotros</h1>
+
+  <p>
+    Somos un equipo apasionado por el basketball, enfocado en ayudar a jugadores a mejorar su nivel dentro de la cancha. Este proyecto nace como parte de un trabajo escolar de TIC, pero con la visión de convertirse en una guía real para cualquier persona que quiera aprender y dominar este deporte.
+  </p>
+
+  <p>
+    Nos consideramos jugadores dedicados, con experiencia en práctica y conocimiento del juego, desde fundamentos básicos hasta estrategias más avanzadas. Sabemos lo que se necesita para mejorar, porque también hemos estado en ese proceso.
+  </p>
+
+  <p>
+    Nuestro objetivo es brindarte tips, información y motivación para que puedas desarrollar tus habilidades, ya sea que estés empezando o quieras llevar tu juego al siguiente nivel.
+  </p>
+
+  <p>
+    💪 Aquí no solo aprendes basketball… aprendes disciplina, constancia y mentalidad ganadora.
+  </p>
+
+  <div id="frase-dinamica"></div>
+
+<script>
+const frases = [
+  "El talento gana partidos, pero el trabajo en equipo gana campeonatos.",
+  "No se trata de ser el mejor, sino de mejorar cada día.",
+  "El esfuerzo de hoy es la victoria de mañana.",
+  "Los grandes jugadores nunca se rinden.",
+  "Entrena como si fueras el peor, juega como si fueras el mejor."
+];
+
+let i = 0;
+const contenedor = document.getElementById("frase-dinamica");
+
+setInterval(() => {
+  contenedor.innerText = frases[i];
+  i = (i + 1) % frases.length;
+}, 3000);
+</script>
+
+</main>
+<footer><p>© 2026 BASKETBOLITOS</p></footer>
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const sound = new Audio("click.mp3");
+        sound.play();
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 150);
+    });
+});
+</script>
+
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+<audio id="bgMusic" loop>
+    <source src="lobby.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// Revisar si ya estaba sonando
+if (!localStorage.getItem("musicPlaying")) {
+    music.volume = 0.3;
+    music.play().then(() => {
+        localStorage.setItem("musicPlaying", "true");
+    }).catch(() => {});
+}
+</script>
+
+<iframe src="music.html" style="display:none;"></iframe>
+
+
+</body></html>

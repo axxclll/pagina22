@@ -1,0 +1,81 @@
+<!-- ======================= nba.html ======================= -->
+<!DOCTYPE html>
+<html lang="es"><head> <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"> <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NBA</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><nav><ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="historia.html">Historia</a></li>
+<li><a href="nba.html">NBA</a></li>
+<li><a href="tips.html">Tips</a></li>
+<li><a href="galeria.html">Galería</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul></nav></header>
+<main class="nba-section">
+  <h1>NBA</h1>
+  <p><strong>LA LIGA MÁS COMPETITIVA DEL MUNDO</strong></p>
+
+  <p>
+    La NBA es considerada la mejor liga de baloncesto del mundo porque reúne a los jugadores más talentosos, equipos altamente competitivos y un nivel de espectáculo único. Cada temporada ofrece jugadas increíbles, rivalidades históricas y un nivel físico y técnico superior al de cualquier otra liga.
+  </p>
+
+  <p>
+    Llegar a la NBA no es fácil. La mayoría de los jugadores comienzan desde jóvenes entrenando constantemente, participando en ligas escolares y universitarias, especialmente en Estados Unidos. Después, deben destacar lo suficiente para ser seleccionados en el Draft o llamar la atención de equipos profesionales.
+  </p>
+
+  <p>
+    Disciplina, esfuerzo, talento y constancia son claves para alcanzar ese sueño. No solo se trata de jugar bien, sino de tener mentalidad fuerte y nunca rendirse.
+  </p>
+
+  <!-- VIDEO EMBED -->
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/2Ta531qCxAs?si=ZaHWV9-1knBZomLn""
+    title="NBA Highlights"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</main>
+<footer><p>© 2026 BASKETBOLITOS</p></footer>
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const sound = new Audio("click.mp3");
+        sound.play();
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 150);
+    });
+});
+
+</script>
+
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+<audio id="bgMusic" loop>
+    <source src="lobby.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// Revisar si ya estaba sonando
+if (!localStorage.getItem("musicPlaying")) {
+    music.volume = 0.3;
+    music.play().then(() => {
+        localStorage.setItem("musicPlaying", "true");
+    }).catch(() => {});
+}
+</script>
+
+<iframe src="music.html" style="display:none;"></iframe>
+
+</body></html>

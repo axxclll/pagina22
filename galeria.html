@@ -1,0 +1,60 @@
+<!-- ======================= galeria.html ======================= -->
+<!DOCTYPE html>
+<html lang="es"><head> <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"> <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Galería</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><nav><ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="historia.html">Historia</a></li>
+<li><a href="nba.html">NBA</a></li>
+<li><a href="tips.html">Tips</a></li>
+<li><a href="galeria.html">Galería</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul></nav></header>
+<main>
+<h1>Galería</h1>
+<img src="https://imgs.search.brave.com/fyRJ0BUOOZM5-6hMzUCt3Gtzs4et0NFNVIcuL40cZwU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubWVkaW90aWVt/cG8uY29tL0tpLWIt/UzlLM29ndXVFVThU/Q21QZE1zaE1BND0v/MzQ1eDE5NC91cGxv/YWRzL21lZGlhLzIw/MjAvMDQvMjQvb2Jq/ZXRvcy10cm9mZW9z/LWtvYmUtYnJ5YW50/LXN1YmFzdGFkb3Mu/anBn" alt="TROFEO NBA">
+<img src="https://imgs.search.brave.com/CIztciR82fnbiEEav2NKDH4nfRp0wZ3kmPNmbLoqZrM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTE1/NDI4MTI4L3Bob3Rv/L21pY2hhZWwtam9y/ZGFuLWZvcndhcmQt/Zm9yLXRoZS1jaGlj/YWdvLWJ1bGxzLWhv/bGRpbmctYS1iYXNr/ZXRiYWxsLWluLXRo/ZS1sb2NrZXItcm9v/bS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9bUdacmloeEtN/RmY1NWhHRC0tMjcx/UU91cXJKcVRzX3VE/WWotVnU0aGxsZz0" alt="MEJOR JUGADOR DE LA NBA">
+</main>
+<footer><p>© 2026 BASKETBOLITOS</p></footer>
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const sound = new Audio("click.mp3");
+        sound.play();
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 150);
+    });
+});
+</script>
+
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+<audio id="bgMusic" loop>
+    <source src="lobby.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// Revisar si ya estaba sonando
+if (!localStorage.getItem("musicPlaying")) {
+    music.volume = 0.3;
+    music.play().then(() => {
+        localStorage.setItem("musicPlaying", "true");
+    }).catch(() => {});
+}
+</script>
+
+<iframe src="music.html" style="display:none;"></iframe>
+
+</body></html>

@@ -1,0 +1,92 @@
+<!-- ======================= tips.html ======================= -->
+<!DOCTYPE html>
+<html lang="es"><head> <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"> <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tips</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><nav><ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="historia.html">Historia</a></li>
+<li><a href="nba.html">NBA</a></li>
+<li><a href="tips.html">Tips</a></li>
+<li><a href="galeria.html">Galería</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul></nav></header>
+<main class="tips-section">
+  <h1>Tips para mejorar en Basketball</h1>
+
+  <div class="tip">
+    <h2>🏀 Dribleo (Control del balón)</h2>
+    <p>
+      Mantén el balón bajo y controla con la yema de los dedos, no con la palma. Practica con ambas manos para ser impredecible en el juego.
+    </p>
+    <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png">
+  </div>
+
+  <div class="tip">
+    <h2>🛡️ Defensa</h2>
+    <p>
+      Mantente en posición baja, con las rodillas flexionadas y brazos abiertos. No pierdas de vista al jugador ni al balón.
+    </p>
+    <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/202695.png">
+  </div>
+
+  <div class="tip">
+    <h2>🎯 Tiro</h2>
+    <p>
+      Enfócate en la técnica: flexiona piernas, alinea el brazo y sigue el movimiento con la muñeca. La práctica constante mejora la precisión.
+    </p>
+    <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/977.png">
+  </div>
+
+  <div class="tip">
+    <h2>⚡ Velocidad y reacción</h2>
+    <p>
+      Mejora tus reflejos y velocidad con ejercicios de agilidad. Esto te ayudará a reaccionar más rápido en defensa y ataque.
+    </p>
+    <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png">
+  </div>
+
+</main>
+<footer><p>© 2026 BASKETBOLITOS</p></footer>
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const sound = new Audio("click.mp3");
+        sound.play();
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 150);
+    });
+});
+</script>
+
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+<audio id="bgMusic" loop>
+    <source src="lobby.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// Revisar si ya estaba sonando
+if (!localStorage.getItem("musicPlaying")) {
+    music.volume = 0.3;
+    music.play().then(() => {
+        localStorage.setItem("musicPlaying", "true");
+    }).catch(() => {});
+}
+</script>
+
+<iframe src="music.html" style="display:none;"></iframe>
+
+</script>
+</body></html>
